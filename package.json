@@ -1,0 +1,20 @@
+{
+  "name": "home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./style.css --watch",
+    "minify": "npx tailwindcss -i ./src/input.css -o ./style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "swiper": "^10.0.4"
+  }
+}
