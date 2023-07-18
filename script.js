@@ -10,7 +10,12 @@ const listMenu = document.querySelectorAll("ul#menu li");
 
 listMenu.forEach((el) => {
   el.addEventListener("click", () => {
-    el.classList.add("bg-white", "rounded-lg");
+    // Hapus kelas "text-white" dari a dengan aria-current="page"
+    const currentPage = document.querySelector('a[aria-current="page"]');
+    if (currentPage) {
+      currentPage.classList.remove("text-white");
+      currentPage.classList.add("text-gray-400", "dark:text-gray-400");
+    }
   });
 });
 
@@ -29,11 +34,20 @@ hamburgerBtn.addEventListener("click", function () {
   // Tambahkan kelas "bg-[#0E3065]" pada elemen tersebut
 });
 
-const currentPages = document.querySelectorAll('a[aria-current="page"]');
+// const currentPages = document.querySelectorAll('a[aria-current="page"]');
 
-// Menghapus kelas "bg-[#FFB707]" dari setiap elemen a yang ditemukan
-currentPages.forEach((page) => {
-  page.classList.remove("bg-[#FFB707]");
+// // Menghapus kelas "bg-[#FFB707]" dari setiap elemen a yang ditemukan
+// currentPages.forEach((page) => {
+//   page.classList.remove("bg-[#FFB707]");
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPages = document.querySelectorAll('a[aria-current="page"]');
+
+  // Menghapus kelas "bg-[#FFB707]" dari setiap elemen a yang ditemukan
+  currentPages.forEach((page) => {
+    page.classList.remove("text-[#text-white]");
+  });
 });
 
 // Dapatkan elemen <li> dengan teks "Home"
@@ -42,8 +56,7 @@ var homeLi = document.querySelector('li a[aria-current="page"]');
 // Tambahkan event listener pada elemen tersebut
 homeLi.addEventListener("click", function () {
   // Ubah kelas dari "bg-[#FFB707]" menjadi "bg-[#0E3065]"
-  homeLi.classList.remove("bg-[#FFB707]");
-  homeLi.classList.add("bg-[#0E3065]");
+  homeLi.classList.remove("text-[#0E3065]");
   // homeLi.classList.remove("text-white", "dark:hover:text-white");
   homeLi.classList.add("text-gray-400", "dark:text-gray-400");
 });
