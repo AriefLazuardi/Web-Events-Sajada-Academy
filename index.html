@@ -92,7 +92,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#welcome"
                   class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-[#0E3065] lg:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-gray-400 lg:dark:hover:[#0E3065] dark:hover:bg-[#0E4065] dark:hover:text-white lg:dark:hover:bg-[#0E3065] dark:border-gray-700"
                   >Tentang Kami</a
                 >
@@ -113,7 +113,7 @@
               </li>
               <li>
                 <a
-                  href="#invoice"
+                  href="index.html#invoice"
                   class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-[#0E3065] lg:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-gray-400 lg:dark:hover:[#0E3065] dark:hover:bg-[#0E4065] dark:hover:text-white lg:dark:hover:bg-[#0E3065] dark:border-gray-700"
                   >Cek Pembayaran</a
                 >
@@ -255,7 +255,7 @@
                   <button
                     class="flex mx-auto h-12 w-40 items-center justify-center rounded-full bg-[#FFB707] text-center hover:bg-blue-500 hover:text-white lg:w-52 lg:text-base text-sm lg:mx-0 ml-auto"
                   >
-                    <a href="#pricing" class="btn-get-started scrollto"
+                    <a href="detail.html" class="btn-get-started scrollto"
                       >Lihat Selengkapnya...</a
                     >
                   </button>
@@ -425,14 +425,14 @@
       </div>
     </section>
     <section id="invoice" class="pt-20">
-      <div class="bg-[#0E4065] lg:w-2/3 lg:max-h-60 mx-auto">
+      <div class="bg-[#0E4065] lg:w-2/3 lg:h-full mx-auto">
         <h3
           class="lg:text-5xl text-3xl text-center justify-center items-center text-[#FFB707] font-bold pt-5"
         >
           Cek Pembayaran
         </h3>
-        <div class="h-full lg:w-4/6 pt-10 mx-auto pb-40">
-          <form>
+        <div class="h-full lg:w-4/6 pt-10 mx-auto pb-20">
+          <form id="search-input" action="{{route ('search')}}" method="GET">
             <label
               for="default-search"
               class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -460,12 +460,13 @@
               </div>
               <input
                 type="search"
-                id="default-search"
+                id="search-input"
                 class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Masukan kode pembayaran ..."
                 required
               />
               <button
+                id="search-button"
                 type="submit"
                 class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >

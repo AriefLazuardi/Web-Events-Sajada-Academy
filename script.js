@@ -78,3 +78,18 @@ new Swiper(".events-slider", {
     clickable: true,
   },
 });
+
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const searchResults = document.getElementById("search-results");
+
+const formData = new FormData();
+formData.append("invoice", "searchInput.value");
+
+fetch("https://7ab5-180-242-215-3.ngrok-free.app/api/periksa", {
+  method: "POST",
+  body: formData,
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));

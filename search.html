@@ -13,7 +13,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Sajada Event</title>
+    <title>Cek Pembayaran</title>
   </head>
   <body class="bg-[#F6F6F6]">
     <header class="fixed z-50 w-full">
@@ -130,110 +130,109 @@
         </div>
       </nav>
     </header>
+    <section id="search" class="border-2 border-red-500 pt-20">
+      <div class="p-4">
+        <h1 class="text-4xl text-center font-semibold mb-6">
+          Status Pembayaran
+        </h1>
+        <!-- @foreach ($transaksi as $ts) -->
+        <h3 class="text-xl text-center font-semibold mb-6">{{$ts->invoice}}</h3>
+        <div class="container">
+          <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+            <div class="flex md:contents">
+              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                <div class="h-full w-6 flex items-center justify-center">
+                  <div
+                    class="h-full w-1 bg-green-500 pointer-events-none"
+                  ></div>
+                </div>
 
-    <!-- section membership -->
-    <section id="membership" class="pt-20">
-      <div>
-        <h3 class="items-center text-center font-bold lg:text-3xl text-[#0E3065]">
-          <i class="bi bi-calendar-day"></i>
-          Join WEBINAR
-        </h3>
-        <div class="z-10 flex items-center">
-          <hr
-            class="mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700"
-          />
-        </div>
-      </div>
-
-      <div class="w-full max-w-sm lg:flex lg:max-w-full lg:px-28 lg:pt-3">
-        <div
-          class="flex grid-cols-3 flex-col justify-between rounded-b border-b border-l border-r border-gray-400 bg-white p-4 leading-normal lg:rounded-b-none lg:rounded-r lg:border-l-0 lg:border-t lg:border-gray-400"
-        >
-          <div class="flex flex-col lg:flex-row">
-            <div class="order-2 pt-5 lg:order-1 lg:w-2/3">
-              <img
-                src="assets/img/webinar.jpeg"
-                alt=""
-                class="mx-auto lg:h-96 lg:w-96"
-              />
+                <div
+                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center"
+                >
+                  <i class="fas fa-check-circle text-white"></i>
+                </div>
+              </div>
+              <div
+                class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+              >
+                <h3 class="font-semibold text-lg mb-1">{{$ts->invoice}}</h3>
+                <p class="leading-tight text-justify w-full">
+                  {{ \Carbon\Carbon::parse($ts->created_at)->format('d/m/Y
+                  H:i:s') }}
+                </p>
+              </div>
             </div>
-            <div class="lg:order-2 lg:w-2/3 lg:pt-5">
-              <!-- <p class="text-lg font-normal text-gray-600 flex items-center">
-                    Members only
-                  </p> -->
-              <h2 class="text-4xl font-bold text-[#3A5F96]">
-                Temukan
-                <span class="font-bold text-[#FFB707]">Rahasia Menghasilkan Jutaan Rupiah</span>
-                Hanya dari Rumah, saatnya ubah Ponsel Anda menjadi
-                Mesin uang</span>
-              </h2>
-              <div class="flex grid-cols-3 pt-8 text-[#0E3065]">
-                <div class="h-40 w-64">
-                  <h3 class="text-center text-2xl font-bold">
-                    <i class="bi bi-currency-dollar text-[#0E3065]"></i>Harga:
-                  </h3>
-                  <p class="text-center text-sm text-red-500 line-through">
-                    Rp 299.000
-                  </p>
-                  <p class="text-center">-100%</p>
-                  <p class="pt-1 text-2xl font-bold text-center">Gratis</p>
-                  <p class="text-center text-4xl text-green-500">Rp 0.</p>
+            @endforeach
+
+            <div class="flex md:contents">
+              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                <div class="h-full w-6 flex items-center justify-center">
+                  <div
+                    class="h-full w-1 bg-green-500 pointer-events-none"
+                  ></div>
                 </div>
-                <div class="ml-32 h-40 w-64">
-                  <h3 class="text-center text-2xl font-bold">
-                    <i class="bi bi-calendar-check"></i>Jadwal:
-                  </h3>
-                  <p class="pt-5 text-center text-xl">Jum'at</p>
-                  <p class="text-center text-2xl font-bold">21 Juli 2023</p>
-                  <p class="text-center text-lg">20.00-Selesai WIB</p>
-                </div>
-                <div class="ml-28 h-40 w-72">
-                  <h3 class="text-center text-2xl font-bold">
-                    <i class="bi bi-mic-fill"></i>Pembicara:
-                  </h3>
-                  <p class="pt-12 text-center text-2xl font-bold">
-                    Zamhur Mustaqim
-                  </p>
-                  <p class="text-center text-lg">CEO Sajada Academy</p>
+                <div
+                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center"
+                >
+                  <i class="fas fa-check-circle text-white"></i>
                 </div>
               </div>
-              <div class="mx-auto mt-10 flex items-center justify-center">
-                <button class="">
-                  <a
-                    href="https://digitalexpress.sajadadigital.com/checkout/paket-2"
-                    class="items-center rounded-3xl border bg-[#FFB707] px-12 py-2.5 text-center text-base font-bold text-[#0E3065] hover:border-[#0E3065] hover:bg-white"
-                    target="_blank"
-                    ><i class="bi bi-cart-plus-fill pr-3"></i>Gabung Sekarang</a
-                  >
-                </button>
+              <div
+                class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+              >
+                <h3 class="font-semibold text-lg mb-1">Out for Delivery</h3>
+                <p class="leading-tight text-justify">22 July 2021, 01:00 PM</p>
               </div>
-              <br />
-              <h4 class="text-xl font-extrabold text-[#0E3065]">Deskripsi:</h4>
-              <p class="text-base font-normal text-[#0E3065]">
-                Ini adalah salah satu Program dari Sajada Academy yang kami
-                rancang dan Kami mengundang Anda untuk mengikuti webinar yang
-                akan mengungkap rahasia menghasilkan uang jutaan rupiah hanya
-                dari kenyamanan rumah Anda sendiri. Dalam acara ini, kami akan
-                membahas strategi dan metode praktis yang dapat Anda Anda
-                terapkan untuk membangun sumber penghasilan yang menguntungkan
-                secara online
-              </p>
-              <br />
-              <p class="text-base font-normal text-[#0E3065]">
-                Dalam era digital ini, semakin banyak orang yang mencari
-                cara-cara baru untuk mendapatkan uang tanpa harus meninggalkan
-                rumah. Dengan adanya teknologi dan akses internet yang mudah,
-                peluang untuk menghasilkan uang dari rumah semakin terbuka
-                lebar. Webinar ini bertujuan untuk memberikan panduan lengkap
-                dan langkah-langkah praktis untuk Anda bisa menambah pundi –
-                pundi pengashilan baru untuk Anda.
-              </p>
+            </div>
+
+            <div class="flex md:contents">
+              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                <div class="h-full w-6 flex items-center justify-center">
+                  <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
+                </div>
+                <div
+                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-red-500 shadow text-center"
+                >
+                  <i class="fas fa-times-circle text-white"></i>
+                </div>
+              </div>
+              <div
+                class="bg-red-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+              >
+                <h3 class="font-semibold text-lg mb-1 text-gray-50">
+                  Cancelled
+                </h3>
+                <p class="leading-tight text-justify">
+                  Customer cancelled the order
+                </p>
+              </div>
+            </div>
+
+            <div class="flex md:contents">
+              <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                <div class="h-full w-6 flex items-center justify-center">
+                  <div class="h-full w-1 bg-gray-300 pointer-events-none"></div>
+                </div>
+                <div
+                  class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gray-300 shadow text-center"
+                >
+                  <i class="fas fa-exclamation-circle text-gray-400"></i>
+                </div>
+              </div>
+              <div
+                class="bg-gray-300 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+              >
+                <h3 class="font-semibold text-lg mb-1 text-gray-400">
+                  Delivered
+                </h3>
+                <p class="leading-tight text-justify"></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <br />
     <footer id="contact" class="h-full">
       <div class="h-full bg-[#252525]">
         <div
